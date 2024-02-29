@@ -1,0 +1,48 @@
+﻿@model MortgagePlan.Data.ProspectViewModel
+
+<h3>Add New Prospects</h3>
+@using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+{
+    <div class="mb-3 row">
+        @Html.LabelFor(m => m.CustomerName, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="mb-3 row">
+        @Html.ValidationMessageFor(m => m.CustomerName, null, new { @class = "error" })
+    </div>
+    <div class="mb-3 row">
+        @Html.LabelFor(m => m.LoanAmount, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.LoanAmount, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="mb-3 row">
+        @Html.ValidationMessageFor(m => m.LoanAmount, null, new { @class = "error" })
+    </div>
+    <div class="mb-3 row">
+        @Html.LabelFor(m => m.InterestRate, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.InterestRate, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="mb-3 row">
+        @Html.ValidationMessageFor(m => m.InterestRate, null, new { @class = "error" })
+    </div>
+    <div class="mb-3 row">
+        @Html.LabelFor(m => m.Years, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Years, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="mb-3 row error">
+        @Html.ValidationMessageFor(m => m.Years, null, new { @class = "error" })
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10">
+            <input type="submit" class="btn btn-primary" value="Add Prospect">
+        </div>
+    </div>
+}
+

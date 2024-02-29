@@ -1,0 +1,29 @@
+﻿@using MortgagePlan.Data
+@model CustomResponse<IEnumerable<Prospect>>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="row">
+        @if (!Model.IsSuccess)
+        {
+            <h3>@Model.Message</h3>
+        }
+        else
+        {
+            @Html.Partial("AddProspect", new ProspectViewModel())
+            
+            <hr />
+            <ul>
+                @foreach (var prospect in Model.Data)
+                {
+                    <li>
+                        @prospect.ToString()
+                    </li>
+                }
+            </ul>
+
+        }
+    </div>
+    </main>
